@@ -1,0 +1,11 @@
+version: "3"
+services:
+    krakend:
+        image: devopsfaith/krakend
+        # We enable the debug endpoint so krakend offers the /__debug endpoint.
+        # This option is production-safe (it only answers with a "pong")
+        command: run -d -c krakend.json
+        volumes:
+            - "./:/etc/krakend/"
+        ports:
+        - "8080:8080"

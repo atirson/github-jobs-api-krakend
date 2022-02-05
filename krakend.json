@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "extra_config": {},
+    "timeout": "3000ms",
+    "cache_ttl": "300s",
+    "output_encoding": "json",
+    "name": "GithubAPI",
+    "endpoints": [
+      {
+        "endpoint": "/devjobs",
+        "backend": [
+          {
+            "url_pattern": "/repos/frontendbr/vagas/issues",
+            "is_collection": true,
+            "mapping": {
+              "collection": "frontends"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          },
+          {
+            "url_pattern": "/repos/backend-br/vagas/issues",
+            "is_collection": true,
+            "mapping": {
+              "collection": "backends"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          }
+        ],
+        "extra_config": {},
+        "querystring_params": [
+          "labels",
+          "per_page",
+          "page"
+        ]
+      }
+    ]
+  }
