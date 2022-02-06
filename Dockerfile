@@ -1,7 +1,6 @@
-FROM ubuntu:16.04
+FROM devopsfaith/krakend
 
-WORKDIR /app
+COPY krakend.json /etc/krakend/krakend.json
 
-COPY docker-compose.yml /app/
-
-RUN docker-compose up -d
+ENTRYPOINT [ "/usr/bin/krakend" ]
+CMD [ "run", "-c", "/etc/krakend/krakend.json"]

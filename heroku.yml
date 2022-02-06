@@ -1,3 +1,5 @@
 build: 
   docker: 
     web: Dockerfile
+run:
+  web: docker run -p 8080:8080 -v "${PWD}:/etc/krakend/" devopsfaith/krakend run -d -c krakend.json 
