@@ -13,4 +13,6 @@ WORKDIR /app
 
 COPY Dockerfile /app/
 
+RUN apt-get update && apt-get install docker-ce docker-ce-cli containerd.io  
+
 RUN docker build -t github-jobs-kraken .  && docker run -p 8080:8080 github-jobs-kraken
