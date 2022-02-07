@@ -1,10 +1,56 @@
 {
     "version": 2,
-    "extra_config": {},
     "timeout": "3000ms",
     "cache_ttl": "300s",
     "output_encoding": "json",
     "name": "GithubAPI",
+    "extra_config": {
+      "github_com/devopsfaith/krakend-cors": {
+        "allow-origins": ["*"],
+        "allow_headers": ["*"],
+        "allow-methods": ["GET", "POST", "DELETE", "PUT"],
+        "expose_headers": [
+          "Accept-Encoding",
+          "Accept-Language",
+          "access-control-allow-origin",
+          "Access-Control-Request-Headers",
+          "Access-Control-Request-Method",
+          "Authorization",
+          "Cache-Control",
+          "Connection",
+          "Content-Type",
+          "Host",
+          "If-Modified-Since",
+          "Keep-Alive",
+          "Key",
+          "Origin",
+          "Pragma",
+          "User-Agent",
+          "X-Custom-Header"
+        ],
+        "allow_credentials": true,
+        "max-age": "24h"
+      },
+      "github.com/devopsfaith/krakend-circuitbreaker/gobreaker": {
+        "interval": 30,
+        "timeout": 15,
+        "maxErrors": 1,
+        "name": "microservice-breaker",
+        "logStatusChange": true
+      },
+      "github_com/devopsfaith/krakend-logstash": {
+        "enabled": true
+      },
+      "github_com/devopsfaith/krakend-gologging": {
+        "level": "DEBUG",
+        "prefix": "[KRAKEND_LOGGING]",
+        "syslog": false,
+        "stdout": true
+      },
+      "github.com/devopsfaith/krakend/proxy": {
+        "sequential": true
+      }
+    },
     "endpoints": [
       {
         "endpoint": "/devjobs",
