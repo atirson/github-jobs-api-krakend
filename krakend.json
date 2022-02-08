@@ -67,6 +67,17 @@
             "extra_config": {}
           },
           {
+            "url_pattern": "/repos/react-brasil/vagas/issues",
+            "is_collection": true,
+            "mapping": {
+              "collection": "react"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          },
+          {
             "url_pattern": "/repos/backend-br/vagas/issues",
             "is_collection": true,
             "mapping": {
@@ -84,6 +95,84 @@
           "per_page",
           "page"
         ]
+      },
+      {
+        "endpoint": "/devjobs/labels",
+        "backend": [
+          {
+            "url_pattern": "/repos/frontendbr/vagas/labels?per_page=1000&page=1",
+            "is_collection": true,
+            "mapping": {
+              "collection": "frontendsLabels"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          },
+          {
+            "url_pattern": "/repos/react-brasil/vagas/labels?per_page=1000&page=1",
+            "is_collection": true,
+            "mapping": {
+              "collection": "reactLabels"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          },
+          {
+            "url_pattern": "/repos/backend-br/vagas/labels?per_page=1000&page=1",
+            "is_collection": true,
+            "mapping": {
+              "collection": "backendsLabels"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          }
+        ],
+        "extra_config": {}
+      },
+      {
+        "endpoint": "/devjobs/details",
+        "backend": [
+          {
+            "url_pattern": "/repos/frontendbr/vagas",
+            "is_collection": true,
+            "mapping": {
+              "collection": "frontendsDetails"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          },
+          {
+            "url_pattern": "/repos/react-brasil/vagas",
+            "is_collection": true,
+            "mapping": {
+              "collection": "reactDetails"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          },
+          {
+            "url_pattern": "/repos/backend-br/vagas",
+            "is_collection": true,
+            "mapping": {
+              "collection": "backendsDetails"
+            },
+            "host": [
+              "https://api.github.com"
+            ],
+            "extra_config": {}
+          }
+        ],
+        "extra_config": {}
       }
     ]
   }
