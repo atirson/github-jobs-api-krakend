@@ -108,7 +108,7 @@
             "host": [
               "https://api.github.com"
             ],
-            "extra_config": {}
+            "extra_config": { }
           },
           {
             "url_pattern": "/repos/react-brasil/vagas/labels?per_page=1000&page=1",
