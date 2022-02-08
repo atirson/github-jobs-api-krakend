@@ -139,36 +139,28 @@
         "endpoint": "/devjobs/details",
         "backend": [
           {
-            "url_pattern": "/repos/frontendbr/vagas",
-            "is_collection": true,
-            "mapping": {
-              "collection": "frontendsDetails"
-            },
+            "url_pattern": "/users/atirson",
             "host": [
               "https://api.github.com"
             ],
+            "group": "frontendsDetails",
             "extra_config": {}
           },
           {
             "url_pattern": "/repos/react-brasil/vagas",
-            "is_collection": true,
-            "mapping": {
-              "collection": "reactDetails"
-            },
+            "is_collection": false,
             "host": [
               "https://api.github.com"
             ],
+            "group": "reactDetails",
             "extra_config": {}
           },
           {
             "url_pattern": "/repos/backend-br/vagas",
-            "is_collection": true,
-            "mapping": {
-              "collection": "backendsDetails"
-            },
             "host": [
               "https://api.github.com"
             ],
+            "group": "backendsDetails",
             "extra_config": {}
           }
         ],
