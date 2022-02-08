@@ -139,7 +139,7 @@
         "endpoint": "/devjobs/details",
         "backend": [
           {
-            "url_pattern": "/users/atirson",
+            "url_pattern": "/repos/frontendbr/vagas",
             "host": [
               "https://api.github.com"
             ],
